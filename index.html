@@ -472,60 +472,615 @@
                         <span>+234 XXX XXX XXXX</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Your Location</span>
-                    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favour Damilola Olaiya - Content Writer & Editor</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --accent: #000000;
+            --border: #e1e5e9;
+            --card-bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #000000;
+            --bg-secondary: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --accent: #ffffff;
+            --border: #333333;
+            --card-bg: #1a1a1a;
+            --shadow: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle i {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        /* Hero/Landing Page */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--bg-primary);
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            color: var(--text-primary);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-nav-item {
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 1.5rem 2rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .hero-nav-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--shadow);
+        }
+
+        /* Page Sections */
+        .page-section {
+            min-height: 100vh;
+            padding: 80px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 10px 20px;
+            border: 2px solid var(--border);
+            border-radius: 25px;
+            background-color: var(--card-bg);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-to-home:hover {
+            border-color: var(--accent);
+            transform: translateX(-5px);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+
+        .about-sidebar {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .contact-item {
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+
+        .about-main {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .company {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .duration {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        /* Hidden sections */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .hero.active {
+            display: flex;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-nav {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .theme-toggle {
+                top: 15px;
+                right: 15px;
+            }
+
+            .back-to-home {
+                top: 15px;
+                left: 15px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Smooth transitions */
+        * {
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body data-theme="light">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <!-- Back to Home Button (Hidden on home) -->
+    <a href="#" class="back-to-home" id="back-home" onclick="showSection('hero')" style="display: none;">
+        <i class="fas fa-home"></i> Home
+    </a>
+
+    <!-- Hero/Landing Section -->
+    <section id="hero" class="hero active">
+        <div class="container">
+            <div class="hero-content">
+                <h1>I am Favour</h1>
+                <p>Content Writer & Editorial Associate</p>
+                <div class="hero-nav">
+                    <a href="#" class="hero-nav-item" onclick="showSection('projects')">
+                        <i class="fas fa-briefcase"></i><br>Projects
+                    </a>
+                    <a href="#" class="hero-nav-item" onclick="showSection('about')">
+                        <i class="fas fa-user"></i><br>About Me
+                    </a>
+                    <a href="#" class="hero-nav-item" onclick="showSection('services')">
+                        <i class="fas fa-cogs"></i><br>Services
+                    </a>
+                    <a href="#" class="hero-nav-item" onclick="showSection('contact')">
+                        <i class="fas fa-envelope"></i><br>Contact Me
+                    </a>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- About Section -->
+    <section id="about" class="page-section">
         <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Versatile graduate with a background in microbiology, experienced in content creation, digital publishing, and research.</p>
             </div>
-            <p>&copy; 2025 Favour. All rights reserved.</p>
+            <div class="about-content">
+                <div class="about-sidebar">
+                    <img src="https://via.placeholder.com/200x200/000000/ffffff?text=Favour" alt="Favour Damilola Olaiya" class="profile-img">
+                    
+                    <div class="contact-info">
+                        <h3>Contact</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i> favourdhamsz@gmail.com
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i> Ibadan, Nigeria
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i> in/favourolaiya
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <h3>Key Skills</h3>
+                        <ul class="skills-list">
+                            <li>Content Creation</li>
+                            <li>Content Editing</li>
+                            <li>Digital Publishing</li>
+                            <li>SEO Optimization</li>
+                            <li>Project Management</li>
+                            <li>Data Analysis</li>
+                            <li>Graphics Design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-main">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="job-title">Editorial Associate</div>
+                            <div class="company">DeFi Planet, London, GB (Remote)</div>
+                            <div class="duration">February 2023 - Present</div>
+                        </div>
+                        <div class="experience-description">
+                            Edited news copies, long-form articles, and market analysis articles for accuracy, clarity, and style. Developed style guides and ensured consistency across all editorial products. Collaborated with writers and the editorial team to meet daily and weekly publishing goals.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="job-title">Freelance Content Writer</div>
+                            <div class="company">Remote</div>
+                            <div class="duration">August 2020 - September 2023</div>
+                        </div>
+                        <div class="experience-description">
+                            Researched and crafted engaging and informative blog content. Proofread and edited blog posts to maintain high-quality standards. Created and optimized content for improved SEO metrics and site traffic.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="job-title">BSc, Microbiology</div>
+                            <div class="company">Obafemi Awolowo University, Ile-Ife</div>
+                            <div class="duration">April 2016 - February 2020</div>
+                        </div>
+                        <div class="experience-description">
+                            Second Class Upper Honors, CGPA: 4.4/5.0. Currently pursuing PGD in Mass Communications at National Open University of Nigeria (January 2024 - Present).
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    <!-- Projects Section -->
+    <section id="projects" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects & Articles</h2>
+                <p class="section-subtitle">A showcase of my writing, editing, and content creation work across various industries and platforms.</p>
+            </div>
+            <div class="projects-grid">
+                <!-- You can add your actual projects here -->
+                <div class="project-card">
+                    <h3>Sample Project 1</h3>
+                    <p class="project-meta">Client/Publication • Date</p>
+                    <p class="project-description">Replace this with your actual project description. Include details about the scope, your role, and the impact or results achieved.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Sample Project 2</h3>
+                    <p class="project-meta">Client/Publication • Date</p>
+                    <p class="project-description">Replace this with your actual project description. Include details about the scope, your role, and the impact or results achieved.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Sample Article 1</h3>
+                    <p class="project-meta">Publication • Date</p>
+                    <p class="project-description">Replace this with your actual article description. Include the topic, publication platform, and any notable engagement metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Form submission handler
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
+    <!-- Services Section -->
+    <section id="services" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Services</h2>
+                <p class="section-subtitle">Professional writing and editing services tailored to your content needs.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-pen-fancy"></i> Content Writing</h3>
+                    <p class="project-description">Creating engaging, well-researched content that resonates with your target audience. Specializing in blog posts, articles, and digital marketing content with SEO optimization.</p>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-edit"></i> Content Editing</h3>
+                    <p class="project-description">Comprehensive editing services to improve clarity, consistency, and style while maintaining your unique voice. Includes structural editing and copy editing.</p>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-search"></i> Research & Fact-Checking</h3>
+                    <p class="project-description">Thorough research and fact-checking services to ensure accuracy and credibility in your content. Drawing from my analytical background in microbiology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+       
+ck to you soon.');
             this.reset();
         });
 
